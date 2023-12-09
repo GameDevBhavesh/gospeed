@@ -1,8 +1,8 @@
-![JSON Configuration File Banner](./doc/images/json_configuration_file_banner.png)
+![Gospeed a api testing and managment platform made with godot engine](./screenshots/1.jpg)
 
-# JSON Configuration File
+# Gospeed (Api client with godot)
 
-JSON Configuration File is a plugin for Godot that aims to aid reading user input via a JSON file. Using a JSON file as a way to configure your Godot application would allow your users to share configuration files. Minecraft is a remarkable example that uses JSON files to configure certain aspects of the game, such as block models.
+<!-- JSON Configuration File is a plugin for Godot that aims to aid reading user input via a JSON file. Using a JSON file as a way to configure your Godot application would allow your users to share configuration files. Minecraft is a remarkable example that uses JSON files to configure certain aspects of the game, such as block models.
 
 The definition of JSON Schemas inspired this plugin. However, instead of using a JSON file to define the structure of a JSON, it takes a coding approach. This approach has the advantage of allowing more features.
 
@@ -38,4 +38,4 @@ This plugin would offer you:
 
 ## Contributing
 
-If you want to contribute with a new kind of property or a new feature, please consider also contributing to the [documentation](./doc/README.md) or adding new tests to the [repository of tests](https://github.com/98teg/JSONConfigFileTests) for this plugin.
+If you want to contribute with a new kind of property or a new feature, please consider also contributing to the [documentation](./doc/README.md) or adding new tests to the [repository of tests](https://github.com/98teg/JSONConfigFileTests) for this plugin. -->
