@@ -1,0 +1,36 @@
+{
+	"save_version": "1",
+	"current": "res://",
+	"font_size": 14,
+	"tabs": {
+
+	},
+	"selected": "",
+	"show": {
+		"dir": {
+			"empty": true,
+			"hidden": true,
+			"gdignore": true,
+			"git": false,
+			"import": false,
+			"trash": false
+		},
+		"file": {
+			"hidden": false
+		}
+	},
+	"tags": [
+
+	],
+	"tag_counts": {
+
+	},
+	"tags_enabled": {
+
+	},
+	"exts_enabled": [
+
+	],
+	"div1": -300,
+	"div2": -80
+}

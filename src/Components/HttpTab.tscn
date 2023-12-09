@@ -1,0 +1,453 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Components/VBoxEditableList.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Components/HttpTab.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0.396078, 0.952941, 1 )
+
+[node name="HttpTab" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+_request_url_node = NodePath("Panel/VSplitContainer/RequestPanel/VBoxContainer/RequestRow/HBoxContainer/LineEdit")
+_requested_info_url_node = NodePath("Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer/General/RequestedUrl")
+_request_method_node = NodePath("Panel/VSplitContainer/RequestPanel/VBoxContainer/RequestRow/HBoxContainer/OptionButton")
+_request_body_node = NodePath("Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Body/TabContainer/Raw Data/TextEdit")
+_request_headers_node = NodePath("Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Headers/ScrollContainer/VBoxEditableList")
+_request_params_node = NodePath("Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Params/ScrollContainer/VBoxEditableList")
+_request_response_node = NodePath("Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer/Response/TextEdit")
+_request_button_node = NodePath("Panel/VSplitContainer/RequestPanel/VBoxContainer/RequestRow/HBoxContainer/Button")
+_res_beautfy_button_node = NodePath("Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer/Response/Information/beautify")
+_req_beautify_button_node = NodePath("Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Body/TabContainer/Raw Data/Button")
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/autohide = 0
+split_offset = -71
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RequestPanel" type="Panel" parent="Panel/VSplitContainer"]
+margin_right = 1024.0
+margin_bottom = 223.0
+rect_min_size = Vector2( 0, 200 )
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VSplitContainer/RequestPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RequestRow" type="Panel" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/RequestRow"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionButton" type="OptionButton" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/RequestRow/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 100, 0 )
+custom_styles/normal = SubResource( 1 )
+text = "POST"
+flat = true
+clip_text = true
+align = 1
+items = [ "GET", null, false, 0, null, "HEAD", null, false, 1, null, "POST", null, false, 2, null, "PUT", null, false, 3, null, "DELETE", null, false, 4, null, "OPTIONS", null, false, 5, null, "TRACE", null, false, 6, null ]
+selected = 2
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/RequestRow/HBoxContainer"]
+margin_left = 104.0
+margin_right = 920.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+text = "https://reqres.in/api/login"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/RequestRow/HBoxContainer"]
+margin_left = 924.0
+margin_right = 1024.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_horizontal = 0
+text = "Send"
+clip_text = true
+
+[node name="OptionsRow" type="Panel" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer"]
+margin_top = 34.0
+margin_right = 1024.0
+margin_bottom = 223.0
+rect_min_size = Vector2( 0, 150 )
+size_flags_vertical = 3
+
+[node name="TabContainer" type="TabContainer" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Params" type="Panel" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Params"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = 17.0
+margin_right = -12.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxEditableList" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Params/ScrollContainer" instance=ExtResource( 1 )]
+margin_right = 993.0
+margin_bottom = 20.0
+
+[node name="Headers" type="Panel" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Headers"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = 17.0
+margin_right = -12.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxEditableList" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Headers/ScrollContainer" instance=ExtResource( 1 )]
+margin_right = 993.0
+margin_bottom = 20.0
+
+[node name="Body" type="Panel" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Body"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Raw Data" type="Panel" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Body/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="TextEdit" type="TextEdit" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Body/TabContainer/Raw Data"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "{
+    \"email\": \"eve.holt@reqres.in\",
+    \"password\": \"cityslicka\"
+}"
+highlight_current_line = true
+syntax_highlighting = true
+show_line_numbers = true
+draw_tabs = true
+draw_spaces = true
+fold_gutter = true
+smooth_scrolling = true
+hiding_enabled = true
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Body/TabContainer/Raw Data"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -71.0
+margin_bottom = 20.0
+text = "beautify"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Form Data" type="Panel" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Body/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="TextEdit" type="TextEdit" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Body/TabContainer/Form Data"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "{
+    \"email\": \"eve.holt@reqres.in\",
+    \"password\": \"cityslicka\"
+}"
+highlight_current_line = true
+syntax_highlighting = true
+show_line_numbers = true
+draw_tabs = true
+draw_spaces = true
+fold_gutter = true
+smooth_scrolling = true
+hiding_enabled = true
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Body/TabContainer/Form Data"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -71.0
+margin_bottom = 20.0
+text = "beautify"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Binary Data" type="Panel" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Body/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Label" type="Label" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Body/TabContainer/Binary Data"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Drop here."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/Body/TabContainer/Binary Data"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -35.5
+margin_top = 21.5
+margin_right = 35.5
+margin_bottom = 41.5
+text = "Select"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="variables" type="Panel" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/variables"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = 17.0
+margin_right = -12.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxEditableList" parent="Panel/VSplitContainer/RequestPanel/VBoxContainer/OptionsRow/TabContainer/variables/ScrollContainer" instance=ExtResource( 1 )]
+margin_right = 993.0
+margin_bottom = 20.0
+
+[node name="ResponsePanel" type="Panel" parent="Panel/VSplitContainer"]
+margin_top = 235.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VSplitContainer/ResponsePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="Panel/VSplitContainer/ResponsePanel/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 365.0
+size_flags_vertical = 3
+
+[node name="Response" type="VBoxContainer" parent="Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Information" type="HBoxContainer" parent="Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer/Response"]
+margin_right = 1016.0
+margin_bottom = 20.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer5" type="MarginContainer" parent="Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer/Response/Information"]
+margin_left = 736.0
+margin_right = 756.0
+margin_bottom = 20.0
+custom_constants/margin_right = 20
+custom_constants/margin_left = 0
+
+[node name="ms" type="Label" parent="Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer/Response/Information"]
+margin_left = 760.0
+margin_top = 3.0
+margin_right = 780.0
+margin_bottom = 17.0
+text = "ms"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer/Response/Information"]
+margin_left = 784.0
+margin_right = 804.0
+margin_bottom = 20.0
+custom_constants/margin_right = 20
+
+[node name="size" type="Label" parent="Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer/Response/Information"]
+margin_left = 808.0
+margin_top = 3.0
+margin_right = 834.0
+margin_bottom = 17.0
+text = "size"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer3" type="MarginContainer" parent="Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer/Response/Information"]
+margin_left = 838.0
+margin_right = 858.0
+margin_bottom = 20.0
+custom_constants/margin_right = 20
+
+[node name="status" type="Label" parent="Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer/Response/Information"]
+margin_left = 862.0
+margin_top = 3.0
+margin_right = 901.0
+margin_bottom = 17.0
+text = "status"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer/Response/Information"]
+margin_left = 905.0
+margin_right = 925.0
+margin_bottom = 20.0
+custom_constants/margin_right = 20
+
+[node name="beautify" type="Button" parent="Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer/Response/Information"]
+margin_left = 929.0
+margin_right = 992.0
+margin_bottom = 20.0
+text = "beautify"
+
+[node name="MarginContainer4" type="MarginContainer" parent="Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer/Response/Information"]
+margin_left = 996.0
+margin_right = 1016.0
+margin_bottom = 20.0
+custom_constants/margin_right = 20
+
+[node name="TextEdit" type="TextEdit" parent="Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer/Response"]
+margin_top = 24.0
+margin_right = 1016.0
+margin_bottom = 329.0
+size_flags_vertical = 3
+text = "{
+
+
+}"
+readonly = true
+syntax_highlighting = true
+show_line_numbers = true
+draw_tabs = true
+draw_spaces = true
+breakpoint_gutter = true
+fold_gutter = true
+smooth_scrolling = true
+hiding_enabled = true
+wrap_enabled = true
+
+[node name="General" type="VBoxContainer" parent="Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="RequestedUrl" type="LineEdit" parent="Panel/VSplitContainer/ResponsePanel/VBoxContainer/TabContainer/General"]
+margin_right = 1016.0
+margin_bottom = 24.0
+text = "Requested Url :"
+editable = false
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+use_threads = true

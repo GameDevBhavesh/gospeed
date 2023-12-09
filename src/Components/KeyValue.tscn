@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Components/KeyValue.gd" type="Script" id=1]
+
+[node name="KeyValue" type="HBoxContainer"]
+margin_right = 723.0
+margin_bottom = 28.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="LineEdit" parent="."]
+margin_right = 342.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+placeholder_text = "key"
+placeholder_alpha = 0.613
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="value" type="LineEdit" parent="."]
+margin_left = 346.0
+margin_right = 689.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+placeholder_text = "value"
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="add" type="Button" parent="."]
+visible = false
+margin_left = 659.0
+margin_right = 689.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 30, 0 )
+text = "+"
+
+[node name="close" type="Button" parent="."]
+margin_left = 693.0
+margin_right = 723.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 30, 0 )
+text = "X"

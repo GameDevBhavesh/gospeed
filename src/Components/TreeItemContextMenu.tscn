@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[node name="TreeItemContextMenu" type="ItemList"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -492.4
+margin_top = -58.8366
+margin_right = -347.4
+margin_bottom = 105.163
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_constants/vseparation = 3
+custom_constants/icon_margin = 9
+items = [ "add collection", ExtResource( 1 ), true, "add request", ExtResource( 1 ), false, "add folder", ExtResource( 1 ), false, "rename", ExtResource( 1 ), false, "duplicate", ExtResource( 1 ), false, "delete", ExtResource( 1 ), false ]
+allow_reselect = true
+icon_scale = 0.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
